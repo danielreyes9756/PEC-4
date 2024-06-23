@@ -3,14 +3,47 @@
 Este proyecto realiza un análisis de datos sobre las ventas de armas de fuego en Estados Unidos utilizando datos del sistema de verificación de antecedentes de compradores (NICS, National Instant Criminal Background Check System). A continuación se detallan los diferentes aspectos y funcionalidades del proyecto
 
 ## Pasos Para Poder Ejecutar El Proyecto
-En este caso copiar o clonar el proyecto no es necesario no obstante debera agregar a la carpeta "PEC-4/datasets" los ficheros de datos necesarios para esta practica, a su vez también sera necesario crear y iniciar un environtment antes de instalar los requisitos.
-1. cd ./PEC-4
-2. pip install -r requirements.txt
-3. copie los ficheros necesario en "PEC-4/datasets":
+
+Como recordatorio, sera necesario crear y iniciar un environtment antes de instalar los requisitos.
+
+### Mediantes GIT
+
+1. clone el proyecto
+```bash
+git clone https://github.com/danielreyes9756/PEC-4.git
+```
+2. muevase a la carpeta del proyecto
+```bash
+cd ./PEC-4
+```
+2. instale los requisitos (recuerde también montar un env.)
+```bash
+pip install -r requirements.txt
+```
+3. Ejecutar el siguiente comando en la terminal
+```bash
+python3 main.py
+```
+
+### Mediantes el proyecto bruto
+
+**Nota:**
+
+El proyecto bruto no cuenta con los dataset, por lo que deberá incorporarlos al proyecto en la carpeta "PEC-4/datasets".
+
+1. muevase a la carpeta del proyecto
+```bash
+cd ./PEC-4
+```
+2. instale los requisitos (recuerde también montar un env.)
+```bash
+pip install -r requirements.txt
+```
+3. Agregue los ficheros necesarios en "PEC-4/datasets":
     * nics-firearm-background-checks.csv
     * us-state-populations.csv
     * us-states.json
-4. Ejecutar el siguiente comando en la termina
+4. Ejecutar el siguiente comando en la terminal
 ```bash
 python3 main.py
 ```
@@ -44,23 +77,55 @@ python3 main.py
 ### Mapas Coropléticos:
 
 * **create_choropleth_map**: Función que genera mapas coropléticos utilizando Folium para visualizar permit_perc, handgun_perc y longgun_perc.
-* **save_map_as_image**: Función que guarda los mapas como imagenes (No funciona).
+* **save_map_as_image**: Función que guarda los mapas como imagenes (No funciona, bloque comentado).
 
 ## Contenido del Proyecto (Testing)
 El proyecto a su vez cuenta con pruebas unitarias para cubrir cada una de las funciones anteriormente propuestas.
 
-Se ha empleado la libreria HTMLTestRunner para generar reportes.
+Se ha empleado la libreria HTMLTestRunner para generar reportes y unittest para realizar las comprobaciones.
 
-Tan solo ejecutando el siguiente código en nuestra terminal se procedera a crear una carpeta reports conteniendo los ficheros HTML, css y JavaScript necesarios para visualizar estos.
+Tan solo ejecutando el siguiente código con una terminal a nivel de proyecto sera suficiente. Tras la ejecución de los test se creara una carpeta reports conteniendo los ficheros HTML, css y JavaScript necesarios para visualizar estos.
 
 ```bash
 python3 test_runner.py
 ```
 
-La carpeta reports se encuentra bajo la carpeta PEC-4.
+La carpeta reports se encuentra bajo la carpeta PEC-4, para ver el reporte, tan solo haga doble-click en el fichero HTML.
 
 ## Estructura del Proyecto
-He decidido emplear una estructura de capas, pero liviana sin anidar y engorronar tanto la estructura esto debido a que contamos con un proyecto bastante pequeño, y esta estructura es lo suficientemente limpia y clara como para mantener un entendimiento claro del proyecto a la vez que una buena estetica.
+He decidido emplear una estructura de capas, pero liviana sin anidar y engorronar tanto la estructura esto debido a que contamos con un proyecto bastante pequeño, y esta estructura es lo suficientemente límpia y clara como para mantener un entendimiento claro del proyecto a la vez que una buena estetica.
+
+Original
+```
+PEC-4/
+├── datasets/
+│   ├── nics-firearm-background-checks.csv
+│   ├── us-state-populations.csv
+│   ├── us-states.json
+├── features/
+│   ├── __init__.py
+│   ├── data_cleanup.py
+│   ├── data_grouping.py
+│   ├── data_maps_creator.py
+│   ├── data_processing.py
+│   ├── data_status_analysis.py
+│   ├── data_temporal_analysis.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_data_cleanup.py
+│   ├── test_data_grouping.py
+│   ├── test_data_maps_creator.py
+│   ├── test_data_processing.py
+│   ├── test_data_status_analysis.py
+│   ├── test_data_temportal_analysis.py
+├── LICENSE (MIT)
+├── README.md
+├── requirements.txt
+└── main.py
+└── test_runnner.py
+```
+
+Tras ejecutar tanto los test como el progrma:
 ```
 PEC-4/
 ├── datasets/
@@ -78,6 +143,9 @@ PEC-4/
 ├── plots/  (solo tras ejecutar)
 │   ├── time_evolution.png
 ├── reports/  (solo tras ejecutar test)
+│   ├── fichero HTML
+│   ├── fichero css
+│   ├── fichero js
 ├── tests/
 │   ├── plots/  (solo tras ejecutar test)
 │   │   ├── time_evolution.png
@@ -88,8 +156,10 @@ PEC-4/
 │   ├── test_data_processing.py
 │   ├── test_data_status_analysis.py
 │   ├── test_data_temportal_analysis.py
+├── LICENSE (MIT)
 ├── README.md
 ├── requirements.txt
-└── main.py
+├── main.py
+├── temp_map.html
 └── test_runnner.py
 ```
