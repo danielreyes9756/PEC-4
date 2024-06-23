@@ -6,44 +6,36 @@ Este proyecto realiza un análisis de datos sobre las ventas de armas de fuego e
 
 Como recordatorio, sera necesario crear y iniciar un environtment antes de instalar los requisitos.
 
-### Mediantes GIT
+### Mediante GIT
 
-1. clone el proyecto
+1. Clone el proyecto
 ```bash
 git clone https://github.com/danielreyes9756/PEC-4.git
 ```
-2. muevase a la carpeta del proyecto
+2. Muevase a la carpeta del proyecto
 ```bash
 cd ./PEC-4
 ```
-2. instale los requisitos (recuerde también montar un env.)
+2. Instale los requisitos (recuerde también montar un env.)
 ```bash
 pip install -r requirements.txt
 ```
-3. Ejecutar el siguiente comando en la terminal
+3. Ejecute el siguiente comando en la terminal
 ```bash
 python3 main.py
 ```
 
-### Mediantes el proyecto bruto
-
-**Nota:**
-
-El proyecto bruto no cuenta con los dataset, por lo que deberá incorporarlos al proyecto en la carpeta "PEC-4/datasets".
-
-1. muevase a la carpeta del proyecto
+### Mediante el proyecto bruto.
+1. Deberá renombrar de PEC-4/DanielReyesGarcia a PEC-4, esto para manetener la consistencia.
+2. Muevase a la carpeta del proyecto
 ```bash
 cd ./PEC-4
 ```
-2. instale los requisitos (recuerde también montar un env.)
+2. Instale los requisitos (recuerde también montar un env.)
 ```bash
 pip install -r requirements.txt
 ```
-3. Agregue los ficheros necesarios en "PEC-4/datasets":
-    * nics-firearm-background-checks.csv
-    * us-state-populations.csv
-    * us-states.json
-4. Ejecutar el siguiente comando en la terminal
+3. Ejecute el siguiente comando en la terminal
 ```bash
 python3 main.py
 ```
